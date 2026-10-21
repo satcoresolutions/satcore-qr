@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  /* Identidad SatCore */
+  --blue: #132a8e;
+  --blue-soft: #1b3bc4;
+  --neon: #1bff3c;
+
+  /* Superficies */
+  --bg: #0a0a0a;
+  --surface: #111418;
+  --line: #29303b;
+
+  /* Texto */
+  --text: #f6f9fc;
+  --muted: #9ca3af;
+  --white: #ffffff;
+
+  /* Estados */
+  --coral: #ff6b6b;
+  --yellow: #ffd93d;
+  --success: #22c55e;
+}
+
+@theme inline {
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-neon: var(--neon);
+  --color-base: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-coral: var(--coral);
+  --color-yellow: var(--yellow);
+  --color-success: var(--success);
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--blue-soft);
+  color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
