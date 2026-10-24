@@ -1,41 +1,33 @@
-
-import Image from "next/image";
+import Header from "@/components/Header";
 import QrGenerator from "@/components/QrGenerator";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 pb-20 pt-8 sm:px-8 sm:pt-12">
-      <header className="mb-10">
-        {/* Identidad corporativa */}
-        <div className="mb-10 flex flex-col items-start gap-3">
-          <Image
-            src="/logo.png"
-            alt="SatCore Solutions"
-            width={200}
-            height={65}
-            priority
-            className="h-auto w-[160px] object-contain sm:w-[200px]"
-          />
+    <div className="min-h-screen bg-background">
+      <Header />
 
-          <p className="max-w-md text-sm leading-relaxed text-muted">
-            Soluciones digitales seguras, accesibles y funcionales para todos.
-          </p>
-        </div>
-
-        {/* Encabezado de la aplicación */}
-        <div className="max-w-2xl">
-          <h1 className="mt-2 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+      <main className="mx-auto flex w-full max-w-[1440px] flex-col items-center px-4 pb-8 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8">
+        {/* Presentación */}
+        <section className="mb-8 w-full max-w-3xl text-center sm:mb-10">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Generador de QR
           </h1>
 
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            Elige qué quieres compartir, llena los datos y descarga tu código
-            al instante. Todo se genera en tu navegador: no guardamos nada.
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-text-muted sm:text-base">
+            Crea códigos QR para WhatsApp, sitios web, redes sociales, pagos,
+            ubicaciones, menús, Wi-Fi y texto. Descárgalos al instante en PNG o
+            SVG. Todo se genera en tu navegador.
           </p>
-        </div>
-      </header>
+        </section>
 
-      <QrGenerator />
-    </main>
+        {/* Aplicación */}
+        <section
+          className="w-full max-w-7xl"
+          aria-label="Generador de códigos QR"
+        >
+          <QrGenerator />
+        </section>
+      </main>
+    </div>
   );
 }
